@@ -42,9 +42,9 @@ if err != nil {
     return nil, openapi.ProblemDetailsSystemFailure(err.Error())
 }
 authSubs, res, err := client.AuthenticationDataDocumentApi.QueryAuthSubsData(context.Background(), supi, nil)
-```
 
-*udm/internal/sbi/producer/generate_auth_data.go GenerateAuthDataProcedure function*
+//in the udm/internal/sbi/producer/generate_auth_data.go, GenerateAuthDataProcedure function.
+```
 
 From the code, we can see UDM first de-conceal SUCI (line 5), then use QueryAuthSubsData to get authSub from UDR. After that, UDM uses this information to create the authentication vector.
 
